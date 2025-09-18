@@ -1,0 +1,29 @@
+import { ArrowLeft } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import Link from 'next/link';
+
+export default function TransferPage() {
+    return (
+        <div className="min-h-screen bg-background text-foreground p-4">
+            <header className="flex items-center gap-4 mb-8">
+                <Button variant="ghost" size="icon" asChild>
+                    <Link href="/dashboard">
+                        <ArrowLeft />
+                    </Link>
+                </Button>
+                <h1 className="text-2xl font-bold">Transfer Money</h1>
+            </header>
+            <main>
+                <Card>
+                    <CardHeader>
+                        <CardTitle>Coming Soon</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                        <p>The money transfer feature with OTP is currently under development.</p>
+                    </CardContent>
+                </Card>
+            </main>
+        </div>
+    )
+}
