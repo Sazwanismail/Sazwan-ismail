@@ -2,7 +2,7 @@ import { AccountCard } from "@/components/dashboard/account-card";
 import { CredentialCard } from "@/components/dashboard/credential-card";
 import { TransactionHistory } from "@/components/dashboard/transaction-history";
 import { userData } from "@/lib/data";
-import { Wallet, LogOut } from 'lucide-react';
+import { Wallet, LogOut, UserCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import {
@@ -11,8 +11,17 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function DashboardPage() {
+    const getInitials = (name: string) => {
+        const names = name.split(' ');
+        if (names.length > 1) {
+            return `${names[0][0]}${names[names.length - 1][0]}`;
+        }
+        return name.substring(0, 2);
+    };
+
     return (
         <div className="min-h-screen bg-background text-foreground">
             <header className="sticky top-0 z-10 bg-card/80 backdrop-blur-sm border-b">
@@ -22,11 +31,23 @@ export default function DashboardPage() {
                         <h1 className="text-2xl font-bold font-headline">TNG Wallet</h1>
                     </div>
                     <div className="flex items-center gap-4">
-                        <div className="text-right hidden sm:block">
-                            <p className="font-semibold">{userData.accountHolder}</p>
-                            <p className="text-sm text-muted-foreground">{userData.accountNumber}</p>
-                        </div>
                         <TooltipProvider>
+                             <Tooltip>
+                                <TooltipTrigger asChild>
+                                     <Button variant="ghost" size="icon" className="rounded-full" asChild>
+                                        <Link href="/profile">
+                                            <Avatar>
+                                                <AvatarImage src={`https://i.pravatar.cc/150?u=${userData.accountNumber}`} />
+                                                <AvatarFallback>{getInitials(userData.accountHolder)}</AvatarFallback>
+                                            </Avatar>
+                                            <span className="sr-only">Profile</span>
+                                        </Link>
+                                    </Button>
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                <p>Profile</p>
+                                </TooltipContent>
+                            </Tooltip>
                             <Tooltip>
                                 <TooltipTrigger asChild>
                                     <Button variant="ghost" size="icon" className="rounded-full" asChild>

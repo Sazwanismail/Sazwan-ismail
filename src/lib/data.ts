@@ -17,6 +17,8 @@ export type Account = {
   accountNumber: string;
   accountHolder: string;
   balance: number;
+  email: string;
+  phone: string;
   transactions: Transaction[];
   credentials: Credential[];
 };
@@ -25,6 +27,8 @@ export const userData: Account = {
   accountNumber: '150853910035',
   accountHolder: 'Muhamad Sazwan Bin Ismail',
   balance: 173.45,
+  email: 'sazwan.ismail@example.com',
+  phone: '+60 12-345 6789',
   transactions: [
     { id: 'txn9', date: '2024-07-30', description: 'DuitNow Transfer', amount: 50.00, type: 'credit' },
     { id: 'txn1', date: '2024-07-29', description: 'Toll Payment - DUKE Highway', amount: 2.50, type: 'debit' },
