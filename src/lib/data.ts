@@ -23,7 +23,7 @@ export type Account = {
 
 export const userData: Account = {
   accountNumber: '150853910035',
-  accountHolder: 'Alex Doe',
+  accountHolder: 'Muhamad Sazwan Bin Ismail',
   balance: 123.45,
   transactions: [
     { id: 'txn1', date: '2024-07-29', description: 'Toll Payment - DUKE Highway', amount: 2.50, type: 'debit' },

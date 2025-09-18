@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { PlusCircle, MoreVertical } from "lucide-react";
+import { PlusCircle, MoreVertical, Send } from "lucide-react";
 import type { Account } from "@/lib/data";
 
 interface AccountCardProps {
@@ -26,7 +26,11 @@ export function AccountCard({ account }: AccountCardProps) {
         <div className="text-4xl font-bold text-primary">{formattedBalance}</div>
         <p className="text-sm text-muted-foreground mt-1">{account.accountHolder} &bull; {account.accountNumber}</p>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="gap-2">
+        <Button className="w-full">
+            <Send className="mr-2 h-4 w-4" />
+            Transfer Money
+        </Button>
         <Button className="w-full" variant="outline">
           <PlusCircle className="mr-2 h-4 w-4" />
           Link Another Account
