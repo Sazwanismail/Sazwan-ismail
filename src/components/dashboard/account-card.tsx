@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { QrCode, Send, FileDown, Receipt } from "lucide-react";
+import { QrCode, Send, FileDown, Receipt, ArrowDownToLine } from "lucide-react";
 import type { Account } from "@/lib/data";
 import Link from "next/link";
 import {
@@ -23,6 +23,7 @@ export function AccountCard({ account }: AccountCardProps) {
   const actions = [
     { href: "/transfer", icon: Send, label: "Transfer" },
     { href: "/scan", icon: QrCode, label: "Scan QR" },
+    { href: "/show-qr", icon: ArrowDownToLine, label: "Receive"},
     { href: "/payment", icon: Receipt, label: "Pay" },
     { href: "/download", icon: FileDown, label: "Download PDF" },
   ];
@@ -39,15 +40,15 @@ export function AccountCard({ account }: AccountCardProps) {
         </div>
       </CardHeader>
       <CardContent>
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4">
+        <div className="grid grid-cols-3 sm:grid-cols-5 gap-2 sm:gap-4 mt-4">
           <TooltipProvider>
             {actions.map((action) => (
               <Tooltip key={action.label}>
                 <TooltipTrigger asChild>
-                  <Button variant="outline" className="flex flex-col h-24 w-full" asChild>
+                  <Button variant="outline" className="flex flex-col h-20 sm:h-24 w-full" asChild>
                     <Link href={action.href}>
-                      <action.icon className="h-8 w-8 text-primary" />
-                      <span className="mt-2 text-sm font-semibold">{action.label}</span>
+                      <action.icon className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
+                      <span className="mt-2 text-xs sm:text-sm font-semibold text-center">{action.label}</span>
                     </Link>
                   </Button>
                 </TooltipTrigger>
