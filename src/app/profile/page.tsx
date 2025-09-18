@@ -58,6 +58,14 @@ export default function ProfilePage() {
                                 <span className="text-muted-foreground">Telepon</span>
                                 <span className="font-semibold">{userData.phone}</span>
                             </div>
+                            <div className="flex justify-between items-start">
+                                <span className="text-muted-foreground">Alamat</span>
+                                <span className="font-semibold text-right max-w-[70%]">{userData.address}</span>
+                            </div>
+                             <div className="flex justify-between items-center">
+                                <span className="text-muted-foreground">Nomor IC</span>
+                                <span className="font-semibold">{userData.icNumber}</span>
+                            </div>
                         </div>
 
                     </CardContent>

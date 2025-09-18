@@ -19,6 +19,8 @@ export type Account = {
   balance: number;
   email: string;
   phone: string;
+  address: string;
+  icNumber: string;
   transactions: Transaction[];
   credentials: Credential[];
 };
@@ -28,7 +30,9 @@ export const userData: Account = {
   accountHolder: 'Muhamad Sazwan Bin Ismail',
   balance: 173.45,
   email: 'sazwan.ismail@example.com',
-  phone: '+60 12-345 6789',
+  phone: '0146928058',
+  address: 'F262 Kampung Pinang Tunggal 08000 Sungai Petani Kedah, Malaysia',
+  icNumber: '961022-02-5739',
   transactions: [
     { id: 'txn9', date: '2024-07-30', description: 'DuitNow Transfer', amount: 50.00, type: 'credit' },
     { id: 'txn1', date: '2024-07-29', description: 'Toll Payment - DUKE Highway', amount: 2.50, type: 'debit' },
@@ -43,5 +47,6 @@ export const userData: Account = {
   credentials: [
     { id: 'cred1', name: 'Watsons VIP Card', issuer: 'Watsons Malaysia', type: 'Loyalty Card' },
     { id: 'cred2', name: 'PLUSMiles Card', issuer: 'PLUS Malaysia Berhad', type: 'Loyalty Card' },
+    { id: 'cred3', name: 'Global Business Icons 2025', issuer: 'The Portfolio Magazine', type: 'Digital Certificate' },
   ],
 };
