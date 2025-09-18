@@ -1,15 +1,16 @@
 "use client";
 
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, ImageIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardFooter } from '@/components/ui/card';
 
 export default function ScanPage() {
     const videoRef = useRef<HTMLVideoElement>(null);
+    const fileInputRef = useRef<HTMLInputElement>(null);
     const [hasCameraPermission, setHasCameraPermission] = useState<boolean | null>(null);
     const { toast } = useToast();
 
@@ -54,6 +55,23 @@ export default function ScanPage() {
         }
     }, [toast]);
 
+    const handleGalleryClick = () => {
+        fileInputRef.current?.click();
+    };
+
+    const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0];
+        if (file) {
+            // Placeholder for handling the selected QR code image
+            console.log('File selected:', file.name);
+            toast({
+                title: 'Fitur Dalam Pengembangan',
+                description: 'Fungsionalitas pemrosesan kode QR dari galeri akan segera hadir.',
+            });
+        }
+    };
+
+
     return (
         <div className="min-h-screen bg-background text-foreground flex flex-col items-center">
             <header className="w-full p-4 flex items-center justify-between">
@@ -92,6 +110,22 @@ export default function ScanPage() {
                             </div>
                         </div>
                     </CardContent>
+                    <CardFooter className="flex flex-col gap-4 p-4 pt-0">
+                         <p className="text-muted-foreground text-center text-sm">
+                            Posisikan kode QR di dalam bingkai untuk memindai, atau pilih dari galeri.
+                        </p>
+                        <input
+                            type="file"
+                            ref={fileInputRef}
+                            onChange={handleFileChange}
+                            className="hidden"
+                            accept="image/*"
+                        />
+                        <Button variant="outline" className="w-full" onClick={handleGalleryClick}>
+                            <ImageIcon className="mr-2 h-4 w-4" />
+                            Pilih dari Galeri
+                        </Button>
+                    </CardFooter>
                 </Card>
                 {hasCameraPermission === false && (
                     <Alert variant="destructive" className="mt-4">
@@ -101,9 +135,6 @@ export default function ScanPage() {
                         </AlertDescription>
                     </Alert>
                 )}
-                 <p className="text-muted-foreground mt-4 text-center text-sm">
-                    Posisikan kode QR di dalam bingkai untuk memindainya secara otomatis.
-                </p>
             </main>
         </div>
     )
