@@ -24,8 +24,9 @@ export type Account = {
 export const userData: Account = {
   accountNumber: '150853910035',
   accountHolder: 'Muhamad Sazwan Bin Ismail',
-  balance: 123.45,
+  balance: 173.45,
   transactions: [
+    { id: 'txn9', date: '2024-07-30', description: 'DuitNow Transfer', amount: 50.00, type: 'credit' },
     { id: 'txn1', date: '2024-07-29', description: 'Toll Payment - DUKE Highway', amount: 2.50, type: 'debit' },
     { id: 'txn2', date: '2024-07-28', description: 'Parking - Mid Valley Megamall', amount: 5.00, type: 'debit' },
     { id: 'txn3', date: '2024-07-28', description: 'Reload - CIMB Clicks', amount: 50.00, type: 'credit' },
