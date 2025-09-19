@@ -10,6 +10,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { useRouter } from 'next/navigation';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 
 export default function TransferPage() {
@@ -49,17 +50,39 @@ export default function TransferPage() {
                     </CardHeader>
                     <CardContent>
                         <form onSubmit={handleSubmit} className="space-y-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="space-y-2">
+                                    <Label htmlFor="bank">Bank</Label>
+                                    <Select name="bank" required>
+                                        <SelectTrigger id="bank">
+                                            <SelectValue placeholder="Select a bank" />
+                                        </SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value="cimb">CIMB Bank</SelectItem>
+                                            <SelectItem value="maybank">Maybank</SelectItem>
+                                            <SelectItem value="public_bank">Public Bank</SelectItem>
+                                            <SelectItem value="rhb">RHB Bank</SelectItem>
+                                            <SelectItem value="hona_leong">Hong Leong Bank</SelectItem>
+                                            <SelectItem value="other">Other</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="recipient-name">Nama</Label>
+                                    <Input id="recipient-name" name="recipient-name" placeholder="e.g., John Doe" required />
+                                </div>
+                            </div>
                             <div className="space-y-2">
                                 <Label htmlFor="recipient-account">Recipient Account Number</Label>
-                                <Input id="recipient-account" placeholder="e.g., 123456789012" required />
+                                <Input id="recipient-account" name="recipient-account" placeholder="e.g., 123456789012" required />
                             </div>
                             <div className="space-y-2">
                                 <Label htmlFor="amount">Amount (RM)</Label>
-                                <Input id="amount" type="number" placeholder="0.00" required min="0.01" step="0.01" />
+                                <Input id="amount" name="amount" type="number" placeholder="0.00" required min="0.01" step="0.01" />
                             </div>
                             <div className="space-y-2">
                                 <Label htmlFor="reference">Reference (Optional)</Label>
-                                <Textarea id="reference" placeholder="e.g., For dinner" />
+                                <Textarea id="reference" name="reference" placeholder="e.g., For dinner" />
                             </div>
                             <Button type="submit" className="w-full" disabled={isLoading}>
                                 {isLoading ? 'Sending...' : 'Transfer Now'}
