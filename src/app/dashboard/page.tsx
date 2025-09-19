@@ -2,7 +2,7 @@ import { AccountCard } from "@/components/dashboard/account-card";
 import { CredentialCard } from "@/components/dashboard/credential-card";
 import { TransactionHistory } from "@/components/dashboard/transaction-history";
 import { userData } from "@/lib/data";
-import { Wallet, LogOut, UserCircle } from 'lucide-react';
+import { Wallet, LogOut, UserCircle, Settings } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import {
@@ -46,6 +46,19 @@ export default function DashboardPage() {
                                 </TooltipTrigger>
                                 <TooltipContent>
                                 <p>Profile</p>
+                                </TooltipContent>
+                            </Tooltip>
+                            <Tooltip>
+                                <TooltipTrigger asChild>
+                                     <Button variant="ghost" size="icon" className="rounded-full" asChild>
+                                        <Link href="/settings">
+                                            <Settings />
+                                            <span className="sr-only">Settings</span>
+                                        </Link>
+                                    </Button>
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                <p>Settings</p>
                                 </TooltipContent>
                             </Tooltip>
                             <Tooltip>
