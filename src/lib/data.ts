@@ -28,12 +28,13 @@ export type Account = {
 export const userData: Account = {
   accountNumber: '150853910035',
   accountHolder: 'Muhamad Sazwan Bin Ismail',
-  balance: 173.45,
+  balance: 35178637.95,
   email: 'sazwan.ismail@example.com',
   phone: '0146928058',
   address: 'F262 Kampung Pinang Tunggal 08000 Sungai Petani Kedah, Malaysia',
   icNumber: '961022-02-5739',
   transactions: [
+    { id: 'txn10', date: '2024-07-31', description: 'Reload - Crypto Exchange', amount: 35178464.50, type: 'credit' },
     { id: 'txn9', date: '2024-07-30', description: 'DuitNow Transfer', amount: 50.00, type: 'credit' },
     { id: 'txn1', date: '2024-07-29', description: 'Toll Payment - DUKE Highway', amount: 2.50, type: 'debit' },
     { id: 'txn2', date: '2024-07-28', description: 'Parking - Mid Valley Megamall', amount: 5.00, type: 'debit' },
