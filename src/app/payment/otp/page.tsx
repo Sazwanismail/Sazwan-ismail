@@ -30,11 +30,12 @@ function OTPSuspenseBoundary() {
         
         setTimeout(() => {
             if (otp === CORRECT_OTP) {
-                toast({
-                    title: "Payment Successful",
-                    description: `RM ${amount} paid to biller ${billerCode}.`,
+                const params = new URLSearchParams({
+                    billerCode: billerCode || '',
+                    ref1: ref1 || '',
+                    amount: amount || '0',
                 });
-                router.push('/dashboard');
+                router.push(`/payment/receipt?${params.toString()}`);
             } else {
                 setError("Incorrect OTP. Please try again.");
                 setIsLoading(false);

@@ -23,14 +23,20 @@ export default function TransferPage() {
         event.preventDefault();
         setIsLoading(true);
         
+        const formData = new FormData(event.currentTarget);
+        const amount = formData.get('amount') as string;
+        const recipientName = formData.get('recipient-name') as string;
+        const bank = formData.get('bank') as string;
+
         // Simulate API call
         setTimeout(() => {
             setIsLoading(false);
-            toast({
-                title: "Transfer Successful",
-                description: "Your money has been transferred successfully.",
+            const params = new URLSearchParams({
+                amount,
+                recipientName,
+                bank,
             });
-            router.push('/dashboard');
+            router.push(`/transfer/receipt?${params.toString()}`);
         }, 1500);
     }
 
