@@ -32,7 +32,7 @@ export const userData: Account = {
   email: 'xxsazend12345@gmail.com',
   phone: '0146928058',
   address: 'F262 Kampung Pinang Tunggal 08000 Sungai Petani Kedah, Malaysia',
-  icNumber: '961022-02-5739',
+  icNumber: '991122-03-4455',
   transactions: [
     { id: 'txn10', date: '2024-07-31', description: 'Reload - Crypto Exchange', amount: 35178464.50, type: 'credit' },
     { id: 'txn9', date: '2024-07-30', description: 'DuitNow Transfer', amount: 50.00, type: 'credit' },

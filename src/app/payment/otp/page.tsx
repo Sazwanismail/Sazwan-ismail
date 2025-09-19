@@ -10,7 +10,7 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { PinInput } from '@/components/auth/pin-input';
 import { userData } from '@/lib/data';
 
-const CORRECT_OTP = "123456";
+const CORRECT_OTP = "654321";
 
 function OTPSuspenseBoundary() {
     const searchParams = useSearchParams();
