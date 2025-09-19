@@ -1,4 +1,4 @@
-import { ArrowLeft, Bell, ChevronRight, CreditCard, Lock, User, Palette } from 'lucide-react';
+import { ArrowLeft, Bell, ChevronRight, CreditCard, Lock, User, Palette, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
@@ -82,8 +82,8 @@ export default function SettingsPage() {
 
                     <Card>
                         <CardHeader>
-                            <CardTitle>Security</CardTitle>
-                            <CardDescription>Manage your security settings.</CardDescription>
+                            <CardTitle>Security & Privacy</CardTitle>
+                            <CardDescription>Manage your security and privacy settings.</CardDescription>
                         </CardHeader>
                         <CardContent className="space-y-2">
                              <SettingsItem 
@@ -98,6 +98,13 @@ export default function SettingsPage() {
                                 title="Payment Methods" 
                                 description="Manage your linked cards and banks"
                                 href="#"
+                            />
+                            <Separator />
+                             <SettingsItem 
+                                icon={FileText} 
+                                title="Privacy Policy" 
+                                description="Read our privacy policy"
+                                href="/privacy-policy"
                             />
                         </CardContent>
                     </Card>
