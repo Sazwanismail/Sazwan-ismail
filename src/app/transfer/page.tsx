@@ -84,11 +84,11 @@ export default function TransferPage() {
                                 </div>
                             </div>
                             <div className="space-y-2">
-                                <Label htmlFor="recipient-account">Recipient Account Number</Label>
+                                <Label htmlFor="recipient-account">Code transfer</Label>
                                 <Input id="recipient-account" name="recipient-account" placeholder="e.g., 123456789012" required />
                             </div>
                             <div className="space-y-2">
-                                <Label htmlFor="amount">Amount (RM)</Label>
+                                <Label htmlFor="amount">Pay or payment transfer</Label>
                                 <Input id="amount" name="amount" type="number" placeholder="0.00" required min="0.01" step="0.01" />
                             </div>
                             <div className="space-y-2">
