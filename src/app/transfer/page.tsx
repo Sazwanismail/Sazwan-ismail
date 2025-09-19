@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from 'react';
-import { ArrowLeft, Send } from 'lucide-react';
+import { ArrowLeft, Send, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
@@ -17,6 +17,7 @@ export default function TransferPage() {
     const { toast } = useToast();
     const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
+    const [key, setKey] = useState(Date.now());
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -31,6 +32,10 @@ export default function TransferPage() {
             });
             router.push('/dashboard');
         }, 1500);
+    }
+
+    const handleReset = () => {
+        setKey(Date.now());
     }
 
     return (
@@ -49,7 +54,7 @@ export default function TransferPage() {
                         <CardTitle>Send to Recipient</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <form onSubmit={handleSubmit} className="space-y-6">
+                        <form key={key} onSubmit={handleSubmit} className="space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <Label htmlFor="bank">Bank</Label>
@@ -84,10 +89,16 @@ export default function TransferPage() {
                                 <Label htmlFor="reference">Reference (Optional)</Label>
                                 <Textarea id="reference" name="reference" placeholder="e.g., For dinner" />
                             </div>
-                            <Button type="submit" className="w-full" disabled={isLoading}>
-                                {isLoading ? 'Sending...' : 'Transfer Now'}
-                                <Send className="ml-2 h-4 w-4" />
-                            </Button>
+                            <div className="flex flex-col sm:flex-row gap-2">
+                                <Button type="submit" className="w-full" disabled={isLoading}>
+                                    {isLoading ? 'Sending...' : 'Transfer Now'}
+                                    <Send className="ml-2 h-4 w-4" />
+                                </Button>
+                                <Button type="button" variant="outline" className="w-full sm:w-auto" onClick={handleReset} disabled={isLoading}>
+                                    <RotateCcw className="mr-2 h-4 w-4" />
+                                    Reset
+                                </Button>
+                            </div>
                         </form>
                     </CardContent>
                 </Card>
