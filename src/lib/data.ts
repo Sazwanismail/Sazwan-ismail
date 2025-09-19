@@ -49,5 +49,6 @@ export const userData: Account = {
     { id: 'cred1', name: 'Watsons VIP Card', issuer: 'Watsons Malaysia', type: 'Loyalty Card' },
     { id: 'cred2', name: 'PLUSMiles Card', issuer: 'PLUS Malaysia Berhad', type: 'Loyalty Card' },
     { id: 'cred3', name: 'Global Business Icons 2025', issuer: 'The Portfolio Magazine', type: 'Digital Certificate' },
+    { id: 'cred4', name: 'SHA256Coin', issuer: 'CoinMarketCap', type: 'Digital Certificate' },
   ],
 };

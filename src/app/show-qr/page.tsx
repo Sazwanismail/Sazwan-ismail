@@ -34,7 +34,7 @@ export default function ShowQrPage() {
             <main className="flex flex-col items-center justify-center p-4 w-full max-w-md">
                 <div className="flex flex-col items-center mb-6">
                     <TngLogo />
-                    <h1 className="text-lg font-semibold mt-2">Touch 'n Go eWallet</h1>
+                    <h1 className="text-lg font-semibold mt-2">SHA Wallet</h1>
                 </div>
 
                 <Card className="w-full">

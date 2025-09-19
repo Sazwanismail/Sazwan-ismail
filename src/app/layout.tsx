@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'TNG Wallet',
+  title: 'SHA Wallet',
   description: "A secure digital wallet app designed to manage Touch 'n Go accounts and related digital credentials.",
 };
 

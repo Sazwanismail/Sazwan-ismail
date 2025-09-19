@@ -34,7 +34,7 @@ export default function Home() {
           <div className="flex items-center gap-3">
              <Wallet className="h-8 w-8 text-primary" />
              <h1 className="text-3xl font-bold text-center font-headline text-card-foreground">
-                TNG Wallet
+                SHA Wallet
              </h1>
           </div>
           <p className="text-muted-foreground text-center">Welcome back! Please enter your PIN to continue.</p>

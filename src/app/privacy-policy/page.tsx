@@ -21,14 +21,14 @@ export default function PrivacyPolicyPage() {
             <main className="container mx-auto p-4 md:p-8">
                 <Card>
                     <CardHeader>
-                        <CardTitle>TNG Wallet Privacy Policy</CardTitle>
+                        <CardTitle>SHA Wallet Privacy Policy</CardTitle>
                     </CardHeader>
                     <CardContent>
                         <ScrollArea className="h-[60vh] pr-4">
                             <div className="space-y-4 text-sm text-muted-foreground">
                                 <p><strong>Last Updated: July 31, 2024</strong></p>
                                 
-                                <p>Welcome to TNG Wallet ("we," "our," "us"). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our application.</p>
+                                <p>Welcome to SHA Wallet ("we," "our," "us"). We are committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our application.</p>
 
                                 <h3 className="font-bold text-card-foreground">1. Information We Collect</h3>
                                 <p>We may collect information about you in a variety of ways. The information we may collect via the Application includes:</p>
