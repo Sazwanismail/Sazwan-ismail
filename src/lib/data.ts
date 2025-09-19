@@ -29,7 +29,7 @@ export const userData: Account = {
   accountNumber: '150853910035',
   accountHolder: 'Muhamad Sazwan Bin Ismail',
   balance: 35178637.95,
-  email: 'sazwan.ismail@example.com',
+  email: 'xxsazend12345@gmail.com',
   phone: '0146928058',
   address: 'F262 Kampung Pinang Tunggal 08000 Sungai Petani Kedah, Malaysia',
   icNumber: '961022-02-5739',
